@@ -8,15 +8,14 @@ from mpl_toolkits.mplot3d import Axes3D
 from filterpy.kalman import KalmanFilter
 from scipy.linalg import block_diag
 
-sensor_address = "192.168.0.91:8081" # Change to the device IP address
-camera_address = "192.168.0.91" # Change to the device IP address
+sensor_address = "192.168.226.190:8080" # Change to the device IP address
+camera_address = "192.168.226.190:4747" # Change to the device IP address
 
-camera_matrix = np.array([[883.18940021, 0.0, 636.00179082],
-                          [0.0, 886.09959132, 498.82803173],
-                          [0.0, 0.0, 1.0]])
+camera_matrix = np.array([[1004.19069, 0.00000000, 639.952735],
+                          [0.00000000, 1002.86772, 314.869842],
+                          [0.00000000, 0.00000000, 1.00000000]])
 
-dist_coeffs = np.array([ 2.53597019e-01, -1.86728946e+00, 1.07054010e-03, 7.92176184e-04, 4.55875910e+00])
-
+dist_coeffs = np.array([ 1.38715325e-01, -1.04484735e+00,  1.07499094e-03,  1.31782272e-04, 3.37085179e+00])
 
 projMatr1 = np.hstack((camera_matrix, np.zeros((3, 1))))
 projMatr2 = np.hstack((camera_matrix, np.zeros((3, 1))))

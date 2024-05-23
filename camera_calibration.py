@@ -3,18 +3,18 @@ import numpy as np
 import glob
 import os
 
-square_size = 22.5  # mm
+square_size = 25  # mm
 rows = 6
-cols = 9
+cols = 8
 
 objp = np.zeros((rows * cols, 3), np.float32)
-objp[:, :2] = np.mgrid[0:9, 0:6].T.reshape(-1, 2) * square_size
+objp[:, :2] = np.mgrid[0:8, 0:6].T.reshape(-1, 2) * square_size
 
 print(objp)
 obj_points = []
 img_points = []
 
-images = glob.glob("checkerboard_imgs/*.jpg")
+images = glob.glob("*.jpg")
 
 for idx, img_path in enumerate(images):
     img = cv2.imread(img_path)
